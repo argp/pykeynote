@@ -1,0 +1,26 @@
+comment: alice delegates a certain set of rights to principal bob
+    (or other_key)
+local-constants: 
+    alice = "rsa-hex:3048024100c84ba13651e2b6b191c7da7f94feeb\
+            68db267634058ca8fa6e6e4b14661ee92e82a33b3af2fce41\
+            d5cd59207cc41ba5bfc4fc47f30c056e1483a73454ba2ccd3\
+            0203010001"
+    bob = "rsa-hex:3048024100d8c90cb2fb0b2a60927328872a683a\
+          9b1dc14df2a15f157164c6d1b38f2f8a95b239899120eaa43\
+          272aed11eb788162c04139fd76d7952dba804ab9a66ba1ab9\
+          0203010001"
+    other_key = "rsa-hex:3048024100aca70bcec849d36eb78b82af668f98\
+                c61177d528073fb8f19c408c63f7558ea94c29f2f7a86cf2b\
+                dbd22945e82c2890fcbbe7bde3eac3368cef89b1c2fcbcde9\
+                0203010001"
+authorizer: alice
+licensees: bob || other_key
+conditions: 
+    app_domain == "pykeynote testsuite" && 
+    file_name == "test_file" && 
+    (operation == "read" || operation == "write") && 
+    other_attribute == "other_value" -> "true";
+signature:
+            "sig-rsa-sha1-hex:78bd5dbb1f8effe0343761bf0b2a408\
+            a607adbfdd02629898ed080a49012dd6aaaa18fb83535b41b\
+            f01eb44ec1f082216788bbd8b4efcb8776b5dadfa3b902b1"

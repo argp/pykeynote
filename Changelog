@@ -1,0 +1,28 @@
+pykeynote-0.9:
+
+- Ported various NTRG/CTVR internal applications from C KeyNote to
+  Python and pykeynote.
+
+- Minimal, but successful, testing on OpenBSD.
+
+pykeynote-0.8:
+
+- Initial internal release.
+
+- Added documentation.
+
+- Unit testing.
+
+- ENVIRONMENT_FLAG_FUNC (callback) support.
+
+- Pure Python (Pyrex) implementation of kn_read_asserts().
+
+pykeynote-0.7:
+
+- sample_app.py.
+
+- Implemented the keynote_error class for error handling.
+
+- Moved from SWIG to Pyrex for the low-level glue code.
+
+$Id$

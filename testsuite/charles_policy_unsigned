@@ -1,0 +1,18 @@
+comment: bob delegates only read access to principal charles
+local-constants: 
+    bob = "rsa-hex:3048024100d8c90cb2fb0b2a60927328872a683a\
+          9b1dc14df2a15f157164c6d1b38f2f8a95b239899120eaa43\
+          272aed11eb788162c04139fd76d7952dba804ab9a66ba1ab9\
+          0203010001"
+    charles = "rsa-hex:3048024100e869c6ccfc932a299c527a0f6d32c9\
+              3a1273e4450dc0b3a97cef1d82eb1665b35c9654f94e9874f\
+              cd847ce6819611b2d1ad3ec4c00b0cf57cb69bdac76bc936f\
+              0203010001"
+authorizer: bob
+licensees: charles
+conditions: 
+    app_domain == "pykeynote testsuite" && 
+    file_name == "test_file" && 
+    operation == "read" && 
+    other_attribute == "other_value" -> "true";
+signature:
