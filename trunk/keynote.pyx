@@ -45,7 +45,7 @@ __author__ = 'Patroklos Argyroudis <argp at domain cs.tcd.ie>'
 __copyright__ = 'Copyright (c) 2007 Patroklos Argyroudis'
 __license__ = 'BSD'
 __url__ = 'http://code.google.com/p/pykeynote/'
-__version__ = '0.9'
+__version__ = '1.0'
 
 cdef extern from "Python.h":
     int     PyList_Check(object pyo)
