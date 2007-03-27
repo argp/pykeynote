@@ -2,7 +2,9 @@ Python extension module for the KeyNote trust management system
 
 This is a Python extension module for KeyNote.  It provides a
 high-level object-oriented interface to the KeyNote trust management
-API.  Trust management is a unified approach to specifying and
+API.  From the KeyNote web page:
+
+Trust management is a unified approach to specifying and
 interpreting security policies, credentials, and relationships; it
 allows direct authorization of security-critical actions.  KeyNote
 credentials describe a specific delegation of trust and subsume the
