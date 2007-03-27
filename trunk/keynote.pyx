@@ -28,7 +28,7 @@ Python 2.3 or higher.
 
 Pyrex (optional) version 0.9.4 or above available from:
 
-http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex
+http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 
 The KeyNote trust management system (tested with version 2.3) available
 from:
