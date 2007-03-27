@@ -9,13 +9,13 @@ This is a Python extension module for KeyNote.  It provides a
 high-level object-oriented interface to the KeyNote trust management
 API.  From the KeyNote web page:
 
-Trust management is a unified approach to specifying and
-interpreting security policies, credentials, and relationships; it
-allows direct authorization of security-critical actions.  KeyNote
-credentials describe a specific delegation of trust and subsume the
-role of public key certificates; unlike traditional certificates,
-which bind keys to names, credentials can bind keys directly to the
-authorization to perform specific tasks.
+  Trust management is a unified approach to specifying and
+  interpreting security policies, credentials, and relationships; it
+  allows direct authorization of security-critical actions.  KeyNote
+  credentials describe a specific delegation of trust and subsume the
+  role of public key certificates; unlike traditional certificates,
+  which bind keys to names, credentials can bind keys directly to the
+  authorization to perform specific tasks.
 
 For more information, see RFC 2704, keynote(1), keynote(3), keynote(4)
 and keynote(5).
