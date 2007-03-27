@@ -21,7 +21,7 @@ else:
     raise 'pykeynote requires keynote'
 
 # compile the extension module
-setup(name='keynote', version='0.9', author='Patroklos Argyroudis',
+setup(name='keynote', version='1.0', author='Patroklos Argyroudis',
         author_email='argp at domain cs.tcd.ie',
         url='http://code.google.com/p/pykeynote/',
         description='KeyNote trust management system',
