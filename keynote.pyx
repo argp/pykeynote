@@ -452,7 +452,7 @@ cdef class keynote:
         return obj_key
 
     def encode_key(self, dkey, iencoding=INTERNAL_ENC_PKCS1,
-            encoding=ENCODING_HEX, keytype=KEYNOTE_PUBLIC_KEY):
+            encoding=ENCODING_HEX):
         """ASCII-encode and return a key contained in a deckey object.
 
         Arguments:
@@ -460,7 +460,6 @@ cdef class keynote:
         iencoding   -- describes how the key should be binary-encoded
         encoding    -- describes what ASCII encoding should be applied
                        to the deckey object
-        keytype     -- KEYNOTE_PUBLIC_KEY or KEYNOTE_PRIVATE_KEY
         """
         cdef char *key
         cdef keynote_deckey dc
@@ -470,6 +469,7 @@ cdef class keynote:
 
         dc.dec_algorithm = dkey.algorithm
         dc.dec_key = PyCObject_AsVoidPtr(dkey.key)
+        keytype = dkey.keytype
         
         key = kn_encode_key(&dc, iencoding, encoding, keytype)
 

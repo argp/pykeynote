@@ -1,3 +1,5 @@
+- keynote.encode_key() now takes keytype from the deckey object.
+
 pykeynote-1.0:
 
 - Public release.
