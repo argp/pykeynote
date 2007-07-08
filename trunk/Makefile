@@ -15,6 +15,7 @@ install:
 uninstall:
 	rm -rf /usr/lib/python2.3/site-packages/keynote*
 	rm -rf /usr/lib/python2.4/site-packages/keynote*
+	rm -rf /usr/lib/python2.5/site-packages/keynote*
 
 test:
 	python test.py
