@@ -1,0 +1,42 @@
+Python extension module for the KeyNote trust management system
+
+This is a Python extension module for KeyNote.  It provides a
+high-level object-oriented interface to the KeyNote trust management
+API.  From the KeyNote web page:
+
+  Trust management is a unified approach to specifying and
+  interpreting security policies, credentials, and relationships; it
+  allows direct authorization of security-critical actions.  KeyNote
+  credentials describe a specific delegation of trust and subsume the
+  role of public key certificates; unlike traditional certificates,
+  which bind keys to names, credentials can bind keys directly to the
+  authorization to perform specific tasks.
+
+For more information, see RFC 2704, keynote(1), keynote(3), keynote(4)
+and keynote(5).
+
+Although pykeynote has been developed on Linux and minimally tested on
+OpenBSD, it will probably work on all Unix-like systems that satisfy
+the following requirements:
+
+Python version 2.3 or higher.
+
+Pyrex (optional) version 0.9.4 or higher available from:
+
+http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
+
+The KeyNote trust management system (tested with version 2.3) available
+from:
+
+http://www1.cs.columbia.edu/~angelos/keynote.html
+
+The OpenSSL cryptographic toolkit (tested with version 0.9.8d) available
+from:
+
+http://www.openssl.org/
+
+-- 
+Patroklos Argyroudis
+http://ntrg.cs.tcd.ie/~argp/
+
+$Id$
