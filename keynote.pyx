@@ -481,13 +481,13 @@ cdef class keynote:
         free(key)
         return obj_key
 
-    def decode_key(self, key, keytype=KEYNOTE_PUBLIC_KEY):
+    def decode_key(self, key, key_type=KEYNOTE_PUBLIC_KEY):
         """Decode the given ASCII-encoded key returning a deckey
         object.
 
         Arguments:
         key     -- an ASCII-encoded key
-        keytype -- KEYNOTE_PUBLIC_KEY or KEYNOTE_PRIVATE_KEY
+        key_type -- KEYNOTE_PUBLIC_KEY or KEYNOTE_PRIVATE_KEY
         """
         cdef keynote_deckey dc
 
@@ -495,14 +495,15 @@ cdef class keynote:
             self.keynote_errno = ERROR_SYNTAX
             raise keynote_error(self.keynote_errno)
 
-        retval = kn_decode_key(&dc, key, keytype)
+        retval = kn_decode_key(&dc, key, key_type)
 
         if retval < 0:
             self.keynote_errno = keynote_errno
             raise keynote_error(self.keynote_errno)
 
         obj_key = deckey(dc.dec_algorithm,
-                PyCObject_FromVoidPtr(dc.dec_key, NULL))
+                PyCObject_FromVoidPtr(dc.dec_key, NULL),
+                keytype=key_type)
         return obj_key
 
     def get_licensees(self, assertid):
