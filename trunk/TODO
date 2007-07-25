@@ -1,4 +1,6 @@
 - deckey should hold the prefix for ASCII-encoded keys (based on the
   algorithm attribute).
 
+- Full pure Python implementation of the KeyNote RFC.
+
 $Id$
