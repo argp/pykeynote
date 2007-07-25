@@ -1,3 +1,5 @@
+- Added egg and easy_install support.
+
 - Successful testing with Python 2.5.
 
 - keynote.decode_key() now handles private keys correctly.

@@ -4,7 +4,12 @@
 #
 # $Id$
 
-from distutils.core import setup, Extension
+# bootstrapping setuptools installer
+from ez_setup import use_setuptools
+use_setuptools()
+
+# required modules
+from setuptools import setup, Extension
 import sys
 import glob
 

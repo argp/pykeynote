@@ -3,7 +3,7 @@
 #
 # $Id$
 
-all:	keynote.c
+all:	keynote.c egg
 	python setup.py build
 
 keynote.c:	keynote.pyx
@@ -20,6 +20,9 @@ uninstall:
 test:
 	python test.py
 
+egg:
+	python setup.py bdist_egg
+
 doc:
 	epydoc -o doc -n keynote \
 		-u http://code.google.com/p/pykeynote/ \
@@ -30,7 +33,8 @@ sample:
 
 clean:
 	python setup.py clean
-	rm -rf build doc
+	rm -rf build dist keynote.egg-info doc
+	rm -rf *.pyc
 
 distclean:	clean
 	rm -f keynote.c
