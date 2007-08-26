@@ -706,7 +706,9 @@ cdef class keynote:
         else:
             raise ValueError, "input not a list"
 
-        # handle the callback functions
+        # handle the callback functions, this implementation approach allows us
+        # to call the registered callback functions immediately before the
+        # evaluation of an authorization request
         for el in self.callbacks:
             (name, func, flags) = el
             val = func(name)
