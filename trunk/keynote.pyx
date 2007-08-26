@@ -270,7 +270,7 @@ cdef class keynote:
         return retval
 
     def sign_assertion(self, assertion, key,
-            algorithm=SIG_RSA_SHA1_PKCS1_HEX, vflag=0):
+            algorithm = SIG_RSA_SHA1_PKCS1_HEX, vflag = 0):
         """Produce and return the ASCII-encoded cryptographic
         signature for the given assertion using the given ASCII-encoded
         cryptographic private key.  The assertion is not modified.
@@ -294,7 +294,7 @@ cdef class keynote:
         free(sig)
         return obj_sig
 
-    def add_assertion(self, assertion, flags=0):
+    def add_assertion(self, assertion, flags = 0):
         """Add the given assertion to the current session, returning
         its assertion ID.
 
@@ -356,7 +356,7 @@ cdef class keynote:
             self.keynote_errno = keynote_errno
             raise keynote_error(self.keynote_errno)
 
-    def add_action(self, name, value, flags=0):
+    def add_action(self, name, value, flags = 0):
         """Insert the given attribute name, value pair in the action
         environment of the current session.
 
@@ -451,8 +451,8 @@ cdef class keynote:
                 PyCObject_FromVoidPtr(dc.dec_key, NULL))
         return obj_key
 
-    def encode_key(self, dkey, iencoding=INTERNAL_ENC_PKCS1,
-            encoding=ENCODING_HEX):
+    def encode_key(self, dkey, iencoding = INTERNAL_ENC_PKCS1,
+            encoding = ENCODING_HEX):
         """ASCII-encode and return a key contained in a deckey object.
 
         Arguments:
@@ -481,7 +481,7 @@ cdef class keynote:
         free(key)
         return obj_key
 
-    def decode_key(self, key, key_type=KEYNOTE_PUBLIC_KEY):
+    def decode_key(self, key, key_type = KEYNOTE_PUBLIC_KEY):
         """Decode the given ASCII-encoded key returning a deckey
         object.
 
@@ -657,7 +657,7 @@ cdef class keynote:
         free(dst)
         return obj_str
 
-    def get_failed(self, type=KEYNOTE_ERROR_ANY, seq=0):
+    def get_failed(self, type = KEYNOTE_ERROR_ANY, seq = 0):
         """Return the assertion ID in the current session that was
         somehow invalid during evaluation.
 
@@ -758,8 +758,8 @@ cdef class deckey:
     cdef char *key_stringkey
     cdef int key_type
 
-    def __new__(self, algorithm, key, stringkey=None,
-            keytype=KEYNOTE_PUBLIC_KEY):
+    def __new__(self, algorithm, key, stringkey = None,
+            keytype = KEYNOTE_PUBLIC_KEY):
         self.dc = <keynote_deckey *>malloc(sizeof(keynote_deckey))
         self.dc.dec_algorithm = algorithm
         self.dc.dec_key = PyCObject_AsVoidPtr(key)

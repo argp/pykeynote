@@ -153,8 +153,7 @@ class keynote_test(unittest.TestCase):
         self.failUnless(self.kn.sign_assertion(assert_list[3],
                     private_key) != '')
         self.failUnless(self.kn.sign_assertion(assert_list[3],
-                    private_key, keynote.SIG_RSA_SHA1_PKCS1_BASE64,
-                    1) != '')
+                    private_key, keynote.SIG_RSA_SHA1_PKCS1_BASE64, 1) != '')
 
         self.assertRaises(keynote.keynote_error,
                 self.kn.sign_assertion, assert_list[3], '')
@@ -220,8 +219,7 @@ class keynote_test(unittest.TestCase):
         dc = self.kn.get_authorizer(assertion_id)
         key_str = self.kn.encode_key(dc)
         self.kn.decode_hex(key_str)
-        self.assertRaises(keynote.keynote_error, self.kn.decode_hex,
-                '')
+        self.assertRaises(keynote.keynote_error, self.kn.decode_hex, '')
 
     def test_encode_hex(self):
         str = load_test_assertions()
@@ -231,12 +229,10 @@ class keynote_test(unittest.TestCase):
         key_str = self.kn.encode_key(dc)
         bin_key = self.kn.decode_hex(key_str)
         self.kn.encode_hex(bin_key, len(key_str) / 2)
-        self.assertRaises(keynote.keynote_error, self.kn.encode_hex,
-                '', len(key_str) / 2)
-        self.assertRaises(keynote.keynote_error, self.kn.encode_hex,
-                bin_key, 0)
-        self.assertRaises(keynote.keynote_error, self.kn.encode_hex,
-                '', 0)
+        self.assertRaises(keynote.keynote_error, self.kn.encode_hex, '',
+                len(key_str) / 2)
+        self.assertRaises(keynote.keynote_error, self.kn.encode_hex, bin_key, 0)
+        self.assertRaises(keynote.keynote_error, self.kn.encode_hex, '', 0)
 
     def test_encode_base64(self):
         str = load_test_assertions()
@@ -278,8 +274,7 @@ class keynote_test(unittest.TestCase):
 
         dc = self.kn.decode_key(full_key)
         self.failUnless(isinstance(dc, keynote.deckey))
-        self.assertRaises(keynote.keynote_error, self.kn.decode_key,
-                '')
+        self.assertRaises(keynote.keynote_error, self.kn.decode_key, '')
 
     def test_keycompare(self):
         str = load_test_assertions()
